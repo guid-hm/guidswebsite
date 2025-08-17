@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const webRoutes = require('./routes');
 
 function createApp() {
   const app = express();
@@ -11,14 +12,13 @@ function createApp() {
   // Static files
   app.use(express.static(path.join(__dirname, '..', 'public')));
 
-  // Basic routes
-  app.get('/health', (req, res) => {
-    res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  app.get('/', (req, res) => {
+    res.sendFile('index.html', { root: path.join(__dirname, '..', 'public') });
   });
 
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-  });
+  // Routes
+  app.use('/', webRoutes);
+
 
   return app;
 }

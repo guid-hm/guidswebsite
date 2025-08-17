@@ -3,21 +3,93 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Express App</title>
-    <style>
-      :root { color-scheme: light dark; }
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; display: grid; place-items: center; min-height: 100dvh; }
-      main { padding: 2rem; text-align: center; }
-      a { color: #0a7; text-decoration: none; }
-      code { background: rgba(127,127,127,.15); padding: .15rem .35rem; border-radius: .25rem; }
-    </style>
+    <title>Into the Cosmos</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <main>
-      <h1>🚀 Node.js + Express</h1>
-      <p>You're up and running. Edit <code>src/app.js</code> and <code>public/index.html</code> to get started.</p>
-      <p>Health check: <a href="/health">/health</a></p>
-    </main>
-  </body>
-</html>
+    <aside class="sidebar">
+      <div class="logo" title="Into the Cosmos"><img class="logo-img" src="/images/icon2.png" alt="Guid's Website logo" /></div>
+      <nav class="tabs" role="tablist" aria-orientation="vertical">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="home" id="tab-home">Home</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="photos" id="tab-photos">Photos</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="projects" id="tab-projects">Projects</button>
+      </nav>
+    </aside>
 
+    <main class="content">
+      <!-- Home -->
+      <section class="panel active" data-panel="home" role="tabpanel" aria-labelledby="tab-home">
+        <div class="hero">
+          <div class="hero-text">
+            <h1><span class="gradient">Guido Herrera</span></h1>
+            <p class="lede">A minimalist, space‑themed landing page. Drift through photos and projects, and discover what we build beyond the atmosphere.</p>
+            <div class="cta">
+              <a class="button primary" href="#projects" data-tab-link="projects">View Projects</a>
+              <a class="button ghost" href="#photos" data-tab-link="photos">See Photos</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img class="hero-image" alt="Guido Herrera Picture" 
+                 src="images/guido5.jpg" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Photos -->
+      <section class="panel" data-panel="photos" role="tabpanel" aria-labelledby="tab-photos">
+        <h2>Photos</h2>
+        <p class="subtle">A small selection of cosmic photography.</p>
+        <div class="grid photos-grid">
+          <figure class="photo" tabindex="0" data-title="Galaxy Swirl" data-date="2015-11-13">
+            <img src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=800&q=80" alt="Galaxy swirl" />
+          </figure>
+          <figure class="photo" tabindex="0" data-title="Moon Surface" data-date="2016-02-06">
+            <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?auto=format&fit=crop&w=800&q=80" alt="Moon surface" />
+          </figure>
+          <figure class="photo" tabindex="0" data-title="Aurora Borealis" data-date="2016-10-16">
+            <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=800&q=80" alt="Aurora borealis" />
+          </figure>
+          <figure class="photo" tabindex="0" data-title="Star Field" data-date="2015-10-12">
+            <img src="https://images.unsplash.com/photo-1444703686981-dc26d6657664?auto=format&fit=crop&w=800&q=80" alt="Star field" />
+          </figure>
+          <figure class="photo" tabindex="0" data-title="Nebula Cloud" data-date="2015-10-05">
+            <img src="https://images.unsplash.com/photo-1444084316824-dc26d6657664?auto=format&fit=crop&w=800&q=80" alt="Nebula cloud" />
+          </figure>
+          <figure class="photo" tabindex="0" data-title="Milky Way" data-date="2015-10-27">
+            <img src="https://images.unsplash.com/photo-1445905595283-21f8ae8a33d2?auto=format&fit=crop&w=800&q=80" alt="Milky Way" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="panel" data-panel="projects" role="tabpanel" aria-labelledby="tab-projects">
+        <h2>Projects</h2>
+        <p class="subtle">Highlights from the lab.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Star Mapper</h3>
+            <p>Interactive sky map that renders constellations in real‑time.</p>
+            <a class="button tiny" href="#" aria-disabled="true">Coming soon</a>
+          </article>
+          <article class="card">
+            <h3>Cosmic Gallery</h3>
+            <p>A curated gallery of astrophotography with smooth parallax.</p>
+            <a class="button tiny" href="#" aria-disabled="true">Preview</a>
+          </article>
+          <article class="card">
+            <h3>Mission Control</h3>
+            <p>Minimal dashboard for telemetry and project status.</p>
+            <a class="button tiny" href="#" aria-disabled="true">Docs</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="stars" aria-hidden="true"></div>
+
+    <noscript>
+      <div class="noscript">This site works best with JavaScript enabled.</div>
+    </noscript>
+    <script defer src="/app.js"></script>
+  </body>
+  </html>
