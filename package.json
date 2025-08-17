@@ -1,0 +1,20 @@
+{
+  "name": "guidswebsite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal Node.js + Express app",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --ext js,json --watch src --watch public src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
